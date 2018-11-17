@@ -40,5 +40,5 @@ Here we are following the typical **Supervised Learning Recipe**:
 - e.g. ![](static/img/example_decision_tree_classifier.png)
 
 ## References
-- COMP306 API Engineering & Cloud Computing Lecture Notes
+- COMP306 API Engineering & Cloud Computing Lecture Notes provided by [Reza Dibaj](http://smrdibaj.wixsite.com/smrezadibaj)
 - Data from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets.html?format=&task=&att=&area=&numAtt=&numIns=&type=&sort=attUp&view=table)
