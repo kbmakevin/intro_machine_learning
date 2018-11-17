@@ -31,6 +31,16 @@ def main():
     print('test_target={}'.format(test_target))
     print('clf prediction={}'.format(clf.predict(test_data)))
 
+    # visualizing the tree
+    import pydotplus
+    dot_data = tree.export_graphviz(clf, out_file=None,
+                                    feature_names=iris.feature_names,
+                                    class_names=iris.target_names,
+                                    filled=True, rounded=True,
+                                    special_characters=True)
+    graph = pydotplus.graph_from_dot_data(dot_data)
+    graph.write_pdf("./iris.pdf")
+
 
 # execute main function - entry point
 main()

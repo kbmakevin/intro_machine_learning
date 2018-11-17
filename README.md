@@ -12,7 +12,7 @@ The purpose of this assignment is to demonstrate the basics of machine learning 
 ### Supervised Learning
 Here we are following the typical **Supervised Learning Recipe**:
 
-#### 1. Collect Training Data
+#### 1. Collect Training Data/Import a Dataset
 - The more data we can obtain, the better the classifier we can make.
 - Split the data we gathered into two sets of data
     - Training data
@@ -38,6 +38,11 @@ Here we are following the typical **Supervised Learning Recipe**:
     
 #### 3. Make Predictions using the trained classifier
 - e.g. ![](static/img/example_decision_tree_classifier.png)
+
+#### 4. Visualize the classifier
+- In our application, we visualize the Decision Tree in order to better understand the classifier:
+- e.g. ![](static/img/example_visualize_classifier.png)
+
 
 ## References
 - COMP306 API Engineering & Cloud Computing Lecture Notes provided by [Reza Dibaj](http://smrdibaj.wixsite.com/smrezadibaj)
