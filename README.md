@@ -38,3 +38,7 @@ Here we are following the typical **Supervised Learning Recipe**:
     
 #### 3. Make Predictions using the trained classifier
 - e.g. ![](static/img/example_decision_tree_classifier.png)
+
+## References
+- COMP306 API Engineering & Cloud Computing Lecture Notes
+- Data from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets.html?format=&task=&att=&area=&numAtt=&numIns=&type=&sort=attUp&view=table)
