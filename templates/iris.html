@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Machine Learning with Iris DataSet</title>
-</head>
-<body>
-<table border="1px">
-    <tr>
-        <th colspan="{{ feature_name_colspan }}">Feature Name</th>
-    </tr>
-    <tr>
-        {% for feature_name in data_set.feature_names %}
-            <td>
-                {{ feature_name }}
-            </td>
-        {% endfor %}
-    </tr>
-</table>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Machine Learning with Iris DataSet{% endblock %}
+
+{% block container %}
+    <div class="top-pad">
+        <h1>Machine Learning with Iris DataSet</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th colspan="{{ feature_name_colspan }}">Feature Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for feature_name in data_set.feature_names %}
+                    <td>
+                        {{ feature_name }}
+                    </td>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+
+        <object data="/static/iris.pdf" type="application/pdf" width="100%" height="1000px">
+            <p>You don't have a PDF plugin, but you can <a href="/static/iris.pdf">download the PDF file.</a></p>
+        </object>
+    </div>
+{% endblock %}

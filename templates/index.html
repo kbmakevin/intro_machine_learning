@@ -1,10 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <p>Hello {{ username }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block container %}
+    <div class="top-pad">
+        <h1>COMP306 API Engineering & Cloud Computing Ass. #3</h1>
+        <hr>
+        <h2><i>Machine Learning Basics</i></h2>
+        <p>
+            The purpose of this assignment is to demonstrate the basics of machine learning by:
+        </p>
+        <ul>
+            <li>Importing Data into a Python Application using <code>sklearn</code> package and datasets from <a
+                    href="https://archive.ics.uci.edu/ml/datasets.html?format=&task=&att=&area=&numAtt=&numIns=&type=&sort=attUp&view=table">
+                online repositories</a>
+            </li>
+            <li>Using Decision Trees for the purpose of Classification</li>
+            <li>Train a Classifier</li>
+            <li>Demo the Classifier in a Simple Web Application</li>
+        </ul>
+        <div class="card">
+            <div class="card-body">
+                <i>NOTE</i>: <b>Decision Trees</b> are a type of <b>Supervised Machine Learning</b> where we explain
+                what
+                the input is and what the corresponding output is in the training data.
+            </div>
+        </div>
+        <hr/>
+        <h3>Supervised Learning</h3>
+        <p>Here we are following the typical Supervised Learning Recipe:</p>
+
+        <ol>
+            <li>
+                <h5>Collect Training Data/Import a Dataset</h5>
+                <ul>
+                    <li> The more data we can obtain, the better the classifier we can make.</li>
+                    <li>Split the data we gathered into two sets of data</li>
+                    <ul>
+                        <li> Training data</li>
+                        <li>Testing data</li>
+                        <ul>
+                            <li> small subset of data to be reserved for testing data
+                            </li>
+                            <li> this is to prevent the issue of <b>over-fitting</b> from occurring
+                            </li>
+                        </ul>
+                    </ul>
+                </ul>
+            </li>
+            <br>
+            <li>
+                <h5>Training the Classifier</h5>
+                <ul>
+                    <li><i>NOTE</i>: We need to use integer values in place of text labels for the <b>features</b> of
+                        our training
+                        data
+                    </li>
+                    <li>There are many different classifiers, we will be using <b>decision tree</b> in our application
+                    </li>
+                    <li>we can define a <b>classifier as a box of rules</b>
+                    </li>
+                    <li>
+                        to train it, we need a <b>learning algorithm - procedure that creates those rules</b>
+                        <ul>
+                            <li>by finding the pattern in our training data
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        in <code>scikit</code>, the training algorithm is included in the <code>classifier object</code>
+                        and is called <code>fit</code>
+                        <ul>
+                            <li>this finds the pattern in our data
+                                <pre><code>
+    clf = tree.DecisionTreeClassifier()
+    clf.fit(train_data, train_target)
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <h5>Make Predictions using the trained classifier</h5>
+            </li>
+            <br>
+
+            <li>
+                <h5>Visualize the classifier</h5>
+                <ul>
+                    <li>This will help us better understand the classifier</li>
+                </ul>
+            </li>
+
+        </ol>
+    </div>
+{% endblock %}

@@ -1,10 +1,13 @@
 import numpy as np
 from sklearn.datasets import load_iris
 from sklearn import tree
+import os
+import pydotplus
 
 # collect training data
 data_set = load_iris()
 test_idx = [0, 50, 100]
+
 
 def main():
     print('iris.feature_names={}'.format(data_set.feature_names))
@@ -31,11 +34,12 @@ def main():
     print('clf prediction={}'.format(clf.predict(test_data)))
 
     # visualizing the tree
-    import pydotplus
-    dot_data = tree.export_graphviz(clf, out_file=None,
-                                    feature_names=data_set.feature_names,
-                                    class_names=data_set.target_names,
-                                    filled=True, rounded=True,
-                                    special_characters=True)
-    graph = pydotplus.graph_from_dot_data(dot_data)
-    graph.write_pdf("./iris.pdf")
+    # create pdf only if file does not already exist
+    if not os.path.isfile('./static/iris.pdf'):
+        dot_data = tree.export_graphviz(clf, out_file=None,
+                                        feature_names=data_set.feature_names,
+                                        class_names=data_set.target_names,
+                                        filled=True, rounded=True,
+                                        special_characters=True)
+        graph = pydotplus.graph_from_dot_data(dot_data)
+        graph.write_pdf("./static/iris.pdf")
