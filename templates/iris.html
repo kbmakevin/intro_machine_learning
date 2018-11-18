@@ -8,14 +8,14 @@
         <table class="table">
             <thead>
             <tr>
-                <th colspan="{{ feature_name_colspan }}">Feature Name</th>
+                <th colspan="{{ feature_name_colspan }}">Feature Names</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 {% for feature_name in data_set.feature_names %}
                     <td>
-                        {{ feature_name }}
+                         #{{ loop.index }}. {{ feature_name }}
                     </td>
                 {% endfor %}
             </tr>

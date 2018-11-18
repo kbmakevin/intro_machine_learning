@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block title %}Machine Learning with Breast Cancer Data Set{% endblock %}
+
+{% block container %}
+    <div class="top-pad">
+        <h1>Machine Learning with Breast Cancer Data Set</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th colspan="{{ feature_name_colspan }}">Feature Names</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for  feature_name in breast_cancer_feature_names %}
+                    <td>
+                        #{{ loop.index }}. {{ feature_name }}
+                    </td>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Data Cleansing Procedure</h3>
+                    </div>
+                    <div class="card-body">
+                        <ol>
+                            <li>Gather attribute information from: <a
+                                    href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer">https://archive.ics.uci.edu/ml/datasets/Breast+Cancer</a>
+                                <ol>
+                                    <li>Class: no-recurrence-events, recurrence-events</li>
+                                    <li>age: 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80-89, 90-99.</li>
+                                    <li>menopause: lt40, ge40, premeno.</li>
+                                    <li>tumor-size: 0-4, 5-9, 10-14, 15-19, 20-24, 25-29, 30-34, 35-39, 40-44, 45-49,
+                                        50-54, 55-59.
+                                    </li>
+                                    <li>inv-nodes: 0-2, 3-5, 6-8, 9-11, 12-14, 15-17, 18-20, 21-23, 24-26, 27-29, 30-32,
+                                        33-35, 36-39.
+                                    </li>
+                                    <li>node-caps: yes, no.</li>
+                                    <li>deg-malig: 1, 2, 3.</li>
+                                    <li>breast: left, right.</li>
+                                    <li>breast-quad: left-up, left-low, right-up, right-low, central.</li>
+                                    <li>irradiat: yes, no.</li>
+                                </ol>
+                            </li>
+
+                            <li>map class [no-recurrence-events, recurrence-events] -> [0,1]</li>
+                            <li>map age [10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80-89, 90-99] ->
+                                [1,2,3,4,5,6,7,8,9]
+                            </li>
+                            <li>map menopause [lt40, ge40, premeno] -> [1,2,3]</li>
+                            <li>map tumor-size [0-4, 5-9, 10-14, 15-19, 20-24, 25-29, 30-34, 35-39, 40-44, 45-49, 50-54,
+                                55-59] -> [0,5,10,15,20,25,30,35,40,45,50,55]
+                            </li>
+                            <li>map inv-nodes [0-2, 3-5, 6-8, 9-11, 12-14, 15-17, 18-20, 21-23, 24-26, 27-29, 30-32,
+                                33-35, 36-39] -> [0,3,6,9,12,15,18,21,24,27,30,33,36]
+                            </li>
+                            <li>map node-caps [yes, no] -> [1,0]</li>
+                            <li>map deg-malig ['1', '2', '3'] -> [1,2,3]; str to numeric</li>
+                            <li>map breast [left, right] -> [1,2]</li>
+                            <li>map breast-quad [left-up, left-low, right-up, right-low, central] -> [1,2,3,4,5]</li>
+                            <li>map irradiat [yes, no] -> [1,0]</li>
+                            <li>As this data set has missing data, need to go through data set and provide default
+                                values to the missing data (e.g. replace all the ? values with default values).
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>1. Collect Training Data</h2>
+                <pre>{{ collect_data_out }}</pre>
+            </div>
+
+            <div class="col-md-6">
+                <h2>2. Cleansing the Data</h2>
+                <pre>{{ cleanse_data_out }}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>3. Training the Classifier</h2>
+                <pre>
+        <code>train_target = np.delete(data_set_target, test_idx)</code>
+        <code>train_data = np.delete(data_set_data, test_idx, axis=0)</code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>4. Make Predictions using the trained classifier</h2>
+                <pre>
+        <code>{{ test_clf_out }}</code>
+                </pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>5. Visualize the classifier</h2>
+                <object data="/static/breast_cancer.pdf" type="application/pdf" width="100%" height="500px">
+                    <p>You don't have a PDF plugin, but you can <a href="/static/breast_cancer.pdf">download the PDF
+                        file.</a>
+                    </p>
+                </object>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

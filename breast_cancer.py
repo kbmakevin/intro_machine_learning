@@ -1,17 +1,26 @@
 import numpy as np
-import urllib.request
+from sklearn import tree
+import os
+import pydotplus
 
 # BINARY CLASSIFICATION using Breast Cancer data set from https://archive.ics.uci.edu/ml/datasets/Breast+Cancer
-
-# URL for the Breast Cancer Data Set (UCI Machine Learning Repository)
+# Breast Cancer Data Set (UCI Machine Learning Repository)
 input_file = './static/breast-cancer.data'
 output_file = './static/cleansed-breast-cancer.data'
 data_set = []
+data_set_class_names = ['no-recurrence-events', 'recurrence-events']
+data_set_feature_names = ['age', 'menopause', 'tumor-size', 'inv-nodes', 'node-caps', 'deg-malig', 'breast',
+                          ' breast-quad', 'irradiat']
+
+collect_data_out = ''
+cleanse_data_out = ''
+test_clf_out = ''
 
 # COLLECT THE DATA ==============================================================================
 # read the data set into a list
 with open(input_file, 'r') as f:
     file_contents = f.readlines()
+collect_data_out += ''.join(file_contents)
 
 # CLEANSE THE DATA ==============================================================================
 # parse the data set
@@ -197,24 +206,70 @@ with open(output_file, 'w') as f:
         data_record = data_record[:-1]
 
         f.write('{}\n'.format(data_record))
-
-# CLEANSE THE DATA ==============================================================================
-# CLEANSE THE DATA ==============================================================================
-# CLEANSE THE DATA ==============================================================================
-
-# data_set_target = data_set[:, 0]
+        cleanse_data_out += data_record + "\n"
 
 dataset = np.loadtxt(output_file, delimiter=",")
+print('dataset.shape={}'.format(dataset.shape))
 
 # separate the data from the target attributes
+data_set_target = dataset[:, 0]
+data_set_data = dataset[:, 1:]
 
-# load the CSV file as a numpy matrix
-# dataset = np.loadtxt(raw_data, delimiter=",")
-# print(dataset.shape)
-#
-# # separate the data from the target attributes
-# X = dataset[:, 0:7]
-# Y = dataset[:, 8]
-#
-# print("X={}".format(X))
-# print("Y={}".format(Y))
+print('data_set_target={}'.format(data_set_target))
+print('data_set_data={}'.format(data_set_data))
+
+# set aside test data
+# we don't have that many data records in this data set
+# can't afford to isolate too many test cases. the more data records we have, the better our classifier will be :)
+# pick random indices for testing, just make sure some in first 201 records, some in 202+ as 0-201 is no-recurrence-events, from 202+ is recurrence-events
+test_idx = [30, 187, 222, 250, 285]
+# take first ten and last ten data records
+# test_idx = []
+# for i in range(10):
+# test_idx.append(i)
+# for i in range(len(data_set) - 10, len(data_set)):
+#     test_idx.append(i)
+
+# training data
+train_target = np.delete(data_set_target, test_idx)
+train_data = np.delete(data_set_data, test_idx, axis=0)
+
+# test data
+test_target = data_set_target[test_idx]
+test_data = data_set_data[test_idx]
+
+print('len(data_set_target)={}'.format(len(data_set_target)))
+print('len(train_target)={}'.format(len(train_target)))
+print('len(test_target)={}'.format(len(test_target)))
+
+print('len(data_set_data)={}'.format(len(data_set_data)))
+print('len(train_data)={}'.format(len(train_data)))
+print('len(test_data)={}'.format(len(test_data)))
+
+# TRAINING THE CLASSIFIER ==============================================================================
+clf = tree.DecisionTreeClassifier()
+clf.fit(train_data, train_target)
+
+# TEST THE CLASSIFIER ==============================================================================
+print('test_target={}'.format(test_target))
+print('clf prediction={}'.format(clf.predict(test_data)))
+test_clf_out += 'test_target={}'.format(test_target) + "\n\t"
+test_clf_out += 'clf prediction={}'.format(clf.predict(test_data))
+
+# idx = 0
+# for item in dataset[:, 0:][test_idx]:
+#     print('data_set at the test_idx={}'.format(item))
+#     print('test_target at test_idx={}'.format(test_target[idx]))
+#     print('test_data at test_idx={}'.format(test_data[idx]))
+#     idx = idx + 1
+
+# VISUALIZE THE CLASSIFIER ==============================================================================
+# create pdf only if file does not already exist
+if not os.path.isfile('./static/breast_cancer.pdf'):
+    dot_data = tree.export_graphviz(clf, out_file=None,
+                                    feature_names=data_set_feature_names,
+                                    class_names=data_set_class_names,
+                                    filled=True, rounded=True,
+                                    special_characters=True)
+    graph = pydotplus.graph_from_dot_data(dot_data)
+    graph.write_pdf("./static/breast_cancer.pdf")
