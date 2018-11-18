@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning with Iris DataSet</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th colspan="{{ feature_name_colspan }}">Feature Name</th>
+    </tr>
+    <tr>
+        {% for feature_name in data_set.feature_names %}
+            <td>
+                {{ feature_name }}
+            </td>
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>
