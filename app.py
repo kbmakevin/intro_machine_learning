@@ -23,5 +23,11 @@ def iris():
                            data_set=data_set)
 
 
+@app.route('/breastcancer')
+def breast_cancer():
+    import breast_cancer
+    return 'executing breast_cancer!'
+
+
 if __name__ == '__main__':
     app.run(debug=True)

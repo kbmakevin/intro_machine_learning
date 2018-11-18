@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf9f909c-edcb-4e20-80b4-b86aa7780739" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/breast_cancer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/comp306_asn3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/comp306_asn3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -17,10 +15,14 @@
       <change beforePath="$PROJECT_DIR$/iris.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/iris.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iris.py" beforeDir="false" afterPath="$PROJECT_DIR$/iris.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/img/example_decision_tree.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/example_decision_tree.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/img/example_decision_tree_classifier.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/example_decision_tree_classifier.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/img/example_training_data.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/example_training_data.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/img/example_visualize_classifier.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/example_visualize_classifier.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/iris.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/static/iris.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/iris.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/iris.html" afterDir="false" />
     </list>
@@ -31,7 +33,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/comp306_asn3$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1542514136533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comp306_asn3$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1542516463977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1255408486">
@@ -43,30 +45,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="1" />
           <entry key="gitignore" value="5" />
-          <entry key="html" value="1394" />
+          <entry key="html" value="1525" />
           <entry key="md" value="2249" />
-          <entry key="py" value="1971" />
-          <entry key="txt" value="40" />
+          <entry key="py" value="4609" />
+          <entry key="txt" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1394" />
+          <entry key="HTML" value="1525" />
           <entry key="Markdown" value="2249" />
-          <entry key="PLAIN_TEXT" value="45" />
-          <entry key="Python" value="1971" />
+          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="Python" value="4609" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
+          <entry key="data" value="14" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
           <entry key="js" value="1" />
           <entry key="md" value="2" />
+          <entry key="names" value="1" />
           <entry key="png" value="2" />
-          <entry key="py" value="2" />
+          <entry key="py" value="3" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -77,8 +82,8 @@
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="2" />
+          <entry key="PLAIN_TEXT" value="18" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -90,20 +95,21 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+                <state relative-caret-position="374">
+                  <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
                   <folding>
-                    <marker date="1542511236653" expanded="true" signature="282:495" ph="..." />
+                    <marker date="1542515657880" expanded="true" signature="282:495" ph="..." />
+                    <marker date="1542515657880" expanded="true" signature="545:611" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+                <state relative-caret-position="244">
+                  <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -111,8 +117,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/iris.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
@@ -120,32 +126,20 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="451">
-                  <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+                <state relative-caret-position="655">
+                  <caret line="101" column="83" selection-start-line="101" selection-start-column="83" selection-end-line="101" selection-end-column="83" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/iris.py">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/breast_cancer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+                <state relative-caret-position="281">
+                  <caret line="195" column="34" lean-forward="true" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="106">
-                    <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-                  </first_editor>
-                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -159,15 +153,6 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="5" selection-start-column="5" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -175,8 +160,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/iris.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="12" selection-start-line="12" selection-end-line="12" />
+                <state relative-caret-position="493">
+                  <caret line="29" column="36" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -192,12 +177,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>[3]</find>
+      <find>?</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -208,14 +199,17 @@
         <option value="$PROJECT_DIR$/venv/requirements.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/static/js/main.js" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/iris.py" />
-        <option value="$PROJECT_DIR$/templates/iris.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/templates/iris.html" />
+        <option value="$PROJECT_DIR$/breast-cancer.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/static/cleansed-breast-cancer.data" />
+        <option value="$PROJECT_DIR$/breast_cancer.py" />
       </list>
     </option>
   </component>
@@ -287,7 +281,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flask server.Flask (app.py)">
+  <component name="RunManager" selected="Python.breast_cancer">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="comp306_asn3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -302,6 +296,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="breast_cancer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="comp306_asn3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/breast_cancer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -343,9 +356,11 @@
     <list>
       <item itemvalue="Flask server.comp306_asn3" />
       <item itemvalue="Flask server.Flask (app.py)" />
+      <item itemvalue="Python.breast_cancer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.breast_cancer" />
         <item itemvalue="Flask server.Flask (app.py)" />
       </list>
     </recent_temporary>
@@ -368,17 +383,17 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10660981" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10660981" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" weight="0.329718" />
+      <window_info anchor="bottom" id="Python Console" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29609543" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29609543" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -405,23 +420,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/img/example_training_data.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="101" column="83" selection-start-line="101" selection-start-column="83" selection-end-line="101" selection-end-column="83" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="106">
+          <first_editor relative-caret-position="140">
             <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -432,50 +460,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="374">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
-            <marker date="1542511236653" expanded="true" signature="282:495" ph="..." />
+            <marker date="1542515657880" expanded="true" signature="282:495" ph="..." />
+            <marker date="1542515657880" expanded="true" signature="545:611" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/iris.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/iris.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        <state relative-caret-position="493">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/iris.html">
+    <entry file="file://$PROJECT_DIR$/static/breast-cancer.names">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/breast-cancer.data">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="-4371" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/cleansed-breast-cancer.data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="264" column="13" selection-start-line="264" selection-start-column="12" selection-end-line="264" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/breast_cancer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="281">
+          <caret line="195" column="34" lean-forward="true" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
